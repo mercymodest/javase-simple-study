@@ -1,0 +1,54 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven {
+            url 'https://maven.aliyun.com/repository/gradle-plugin'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/spring-plugin'
+        }
+        mavenCentral()
+    }
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    group 'com.mercymodest.blog'
+    version '1.0.0.RELEASE'
+
+    repositories {
+        mavenLocal()
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/spring/'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/gradle-plugin'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/spring-plugin'
+        }
+        mavenCentral()
+    }
+    ext {
+        hutoolVersion = '5.7.21'
+        junitJupiterVersion = '5.8.1'
+        lombokVersion = '1.18.22';
+    }
+
+    dependencies {
+        implementation "cn.hutool:hutool-core:$hutoolVersion"
+        implementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
+        implementation "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
+        implementation "org.projectlombok:lombok:$lombokVersion"
+        annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
