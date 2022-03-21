@@ -63,7 +63,7 @@ public class MergeSortTest {
             // maybe should log trace logs
             return;
         }
-        int mid = (len) / 2 + from;
+        int mid = len / 2 + from;
         // left
         spilt(targetArray, from, mid, resultArray);
         // right
@@ -74,6 +74,15 @@ public class MergeSortTest {
         merge(targetArray, from, mid, to, resultArray);
     }
 
+    /**
+     * 归并排序之合并算法
+     *
+     * @param arr         {@code arr} 目标数组
+     * @param start       {@code start} 合并起始索引
+     * @param mid         {@code mid} 中间索引
+     * @param end         {@code end} 合并终止索引
+     * @param resultArray {@code resultArray} 存放排序后的数组元素,又称为临时数组.用于将排序后的结果合并到目标数组
+     */
     private void merge(int[] arr, int start, int mid, int end, int[] resultArray) {
         if (ArrayUtil.isEmpty(arr)) {
             // maybe should log warn logs
