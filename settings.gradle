@@ -11,4 +11,5 @@ pluginManagement {
 }
 rootProject.name = 'javase-simple-study'
 include 'simple-study-sorted'
+include 'simple-study-data-structure'
 
